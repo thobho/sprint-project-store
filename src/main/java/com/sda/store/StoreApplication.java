@@ -62,7 +62,7 @@ public class StoreApplication {
 			userService.save(user2);
 			userService.save(user3);
 
-			userService.getAllUsers().stream().forEach(System.out::println);
+//			userService.getAllUsers().stream().forEach(System.out::println);
 
 		};
 	}

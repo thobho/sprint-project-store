@@ -28,7 +28,7 @@ public class UserService {
         userRepository.save(entityToSave);
     }
 
-
+    @Secured("ADMIN")
     public List<UserDto> getAllUsers(){
         Iterable<UserEntity> allUsers = userRepository.findAll();
         return StreamSupport.stream(allUsers.spliterator(), false)
