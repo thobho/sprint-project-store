@@ -15,10 +15,10 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id", updatable = false, nullable = false)
     private Long id;
 
     @OneToMany(mappedBy="userEntity", fetch = FetchType.LAZY)
-
     private List<OrderEntity> orders;
 
     @NotNull

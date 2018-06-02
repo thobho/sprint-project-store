@@ -4,6 +4,7 @@ import com.sda.store.product.ProductEntity;
 import com.sda.store.user.UserEntity;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -15,13 +16,23 @@ public class OrderEntity {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "fk_user")
     private UserEntity userEntity;
 
-//    @Column(name = "product_id")
     @OneToMany(mappedBy="orderEntity", fetch = FetchType.LAZY)
     private List<ProductEntity> productEntities;
 
+    private Date orderDate;
+
     public OrderEntity() {
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 
     public UserEntity getUserEntity() {

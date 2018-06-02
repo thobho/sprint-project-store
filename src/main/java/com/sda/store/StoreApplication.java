@@ -44,34 +44,34 @@ public class StoreApplication {
 			userEntity.setName("Seba");
 			userEntity.setJoinDate(new Date());
 
-			UserEntity userEntity2 = new UserEntity();
-			userEntity2.setName("Seba");
-			userEntity2.setJoinDate(new Date());
-
-			UserEntity userEntity3 = new UserEntity();
-			userEntity3.setName("Anrzej");
-			userEntity3.setJoinDate(new Date());
-
-
-//			OrderEntity orderEntity = new OrderEntity();
-//			orderEntity.setUserEntity(userEntity);
+//			UserEntity userEntity2 = new UserEntity();
+//			userEntity2.setName("Seba");
+//			userEntity2.setJoinDate(new Date());
 //
-//			ProductEntity productEntity = new ProductEntity();
-//			productEntity.setCount(2);
-//			productEntity.setName("Mleko");
-//			productEntity.setOrderEntity(orderEntity);
-//
-//			ProductEntity productEntity2 = new ProductEntity();
-//			productEntity2.setCount(5);
-//			productEntity2.setName("Masło");
-//			productEntity2.setOrderEntity(orderEntity);
+//			UserEntity userEntity3 = new UserEntity();
+//			userEntity3.setName("Anrzej");
+//			userEntity3.setJoinDate(new Date());
 
+
+			OrderEntity orderEntity = new OrderEntity();
+			orderEntity.setUserEntity(userEntity);
+
+			ProductEntity productEntity = new ProductEntity();
+			productEntity.setCount(2);
+			productEntity.setName("Mleko");
+			productEntity.setOrderEntity(orderEntity);
+
+			ProductEntity productEntity2 = new ProductEntity();
+			productEntity2.setCount(5);
+			productEntity2.setName("Masło");
+			productEntity2.setOrderEntity(orderEntity);
+
+//			userRepository.save(orderEntity);
+//			userRepository.save(userEntity3);
 			userRepository.save(userEntity);
-			userRepository.save(userEntity2);
-			userRepository.save(userEntity3);
-//			orderRepository.save(orderEntity);
-//			productRepository.save(productEntity);
-//			productRepository.save(productEntity2);
+			orderRepository.save(orderEntity);
+			productRepository.save(productEntity);
+			productRepository.save(productEntity2);
 
 			List<UserEntity> seby = userRepository.findAllByNameEquals("Seba");
 

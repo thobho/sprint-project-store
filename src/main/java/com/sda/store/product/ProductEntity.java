@@ -16,6 +16,7 @@ public class ProductEntity {
     private int count;
 
     @ManyToOne
+    @JoinColumn(name = "fk_order")
     private OrderEntity orderEntity;
 
     public ProductEntity() {
