@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+
+<table class="regular-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>JoinDate</th>
+        </tr>
+    </thead>
+    <tbody class="regular-table">
+        <tr th:each="user : ${allUsers}">
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.joinDate}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="/adduser" th:href="@{'/adduser'}">Add new User</a>
+
+<a  th:href="@{https://www.thymeleaf.org/}">Thymealeaf documentation.</a>
+
+</body>
+</html>
