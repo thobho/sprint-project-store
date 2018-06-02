@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ProductRepository extends CrudRepository<ProductEntity, Long> {
 
-    List<ProductEntity> findAllByCountGreaterThan(int maxCont);
+    List<ProductEntity> findAllByNameContaining(String like);
 }

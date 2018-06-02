@@ -1,10 +1,12 @@
 package com.sda.store;
 
+import com.sda.store.commons.ProductDto;
 import com.sda.store.commons.UserDto;
 import com.sda.store.order.OrderEntity;
 import com.sda.store.order.OrderRepository;
 import com.sda.store.product.ProductEntity;
 import com.sda.store.product.ProductRepository;
+import com.sda.store.product.ProductService;
 import com.sda.store.user.UserEntity;
 import com.sda.store.user.UserRepository;
 import com.sda.store.user.UserService;
@@ -27,6 +29,9 @@ public class StoreApplication {
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private ProductService productService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(StoreApplication.class, args);
 	}
@@ -44,6 +49,14 @@ public class StoreApplication {
 			UserDto user1 = new UserDto(null, "Seba", new Date());
 			UserDto user2 = new UserDto(null, "Andrzej", new Date());
 			UserDto user3 = new UserDto(null, "Michał", new Date());
+
+			ProductDto productDto = new ProductDto("Maslo", 2, null);
+			ProductDto productDto2 = new ProductDto("Margaryna", 4, null);
+			ProductDto productDto3 = new ProductDto("Piwo", 5, null);
+
+			productService.save(productDto);
+			productService.save(productDto2);
+			productService.save(productDto3);
 
 			userService.save(user1);
 			userService.save(user2);

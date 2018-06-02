@@ -12,6 +12,10 @@ public class ProductDto {
         this.orderEntity = orderEntity;
     }
 
+    public ProductDto() {
+
+    }
+
     public String getName() {
         return name;
     }

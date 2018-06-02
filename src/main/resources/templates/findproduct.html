@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/findproduct}" method="get">
+    <p>Find product: <input type="text" name="nameFragment" title="Find"/></p>
+    <p><input type="submit" value="Find"/> <input type="reset" value="Reset"/></p>
+</form>
+
+<table>
+    <tr th:each="prod : ${products}">
+        <td th:text="${prod.name}"></td>
+        <td th:text="${prod.count}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
