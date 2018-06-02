@@ -18,13 +18,12 @@ public class UserEntity {
     @Column(name = "user_id", updatable = false, nullable = false)
     private Long id;
 
-    @OneToMany(mappedBy="userEntity", fetch = FetchType.LAZY)
-    private List<OrderEntity> orders;
-
     @NotNull
     private String name;
-
     private Date joinDate;
+
+    @OneToMany(mappedBy="userEntity", fetch = FetchType.LAZY)
+    private List<OrderEntity> orders;
 
     public UserEntity() {
     }
