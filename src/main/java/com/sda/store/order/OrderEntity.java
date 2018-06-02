@@ -19,7 +19,7 @@ public class OrderEntity {
     @JoinColumn(name = "fk_user")
     private UserEntity userEntity;
 
-    @OneToMany(mappedBy="orderEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="orderEntity", fetch = FetchType.EAGER)
     private List<ProductEntity> productEntities;
 
     private Date orderDate;

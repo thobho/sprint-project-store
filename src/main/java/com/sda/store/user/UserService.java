@@ -22,6 +22,11 @@ public class UserService {
         this.modelMapper = modelMapper;
     }
 
+    public void save(UserDto userToSave){
+        UserEntity entityToSave = modelMapper.map(userToSave, UserEntity.class);
+        userRepository.save(entityToSave);
+    }
+
 
     public List<UserDto> getAllUsers(){
         Iterable<UserEntity> allUsers = userRepository.findAll();

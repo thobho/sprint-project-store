@@ -40,4 +40,16 @@ public class UserDto {
         this.name = name;
         this.joinDate = joinDate;
     }
+
+    public UserDto() {
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "orders=" + orders +
+                ", name='" + name + '\'' +
+                ", joinDate=" + joinDate +
+                '}';
+    }
 }

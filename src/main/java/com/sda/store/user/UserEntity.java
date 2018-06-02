@@ -22,7 +22,7 @@ public class UserEntity {
     private String name;
     private Date joinDate;
 
-    @OneToMany(mappedBy="userEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="userEntity", fetch = FetchType.EAGER)
     private List<OrderEntity> orders;
 
     public UserEntity() {
