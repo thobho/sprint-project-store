@@ -4,6 +4,7 @@ import com.sda.store.commons.UserDto;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,5 +34,10 @@ public class UserService {
         return StreamSupport.stream(allUsers.spliterator(), false)
                 .map(userEntity -> modelMapper.map(userEntity, UserDto.class))
                 .collect(Collectors.toList());
+    }
+
+    @Secured("ADMIN")
+    public void deleteUser(UserDto userDto){
+        userRepository.delete(modelMapper.map(userDto, UserEntity.class));
     }
 }

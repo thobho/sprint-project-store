@@ -23,7 +23,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-@SpringBootApplication(scanBasePackages = {"com.sda.store.user", "com.sda.store.order", "com.sda.store.product"})
+@SpringBootApplication(scanBasePackages = {"com.sda.store.user", "com.sda.store.order", "com.sda.store.product"}, scanBasePackageClasses = SecurityConfig.class)
 public class StoreApplication {
 
 	@Autowired
