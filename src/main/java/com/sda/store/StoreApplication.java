@@ -35,7 +35,7 @@ public class StoreApplication {
 	public ModelMapper mapper(){
 		return new ModelMapper();
 	}
-//test
+//test2
 	@Bean
 	public CommandLineRunner run(){
 		return args -> {
